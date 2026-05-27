@@ -15,6 +15,10 @@ resource "azurerm_resource_group" "example"{
   name = "examplerg"
   location = "west us"
 }
+resource "azurerm_resource_group" "example1"{
+  name = "examplerg1"
+  location = "eastus"
+}
 resource "azurerm_storage_account" "examplest"{
   name = "example-storage"
   resource_group_name = azure_resource_group.example.name
