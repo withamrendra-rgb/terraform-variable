@@ -26,6 +26,13 @@ resource "azurerm_storage_account" "examplest"{
   account_tier = "Standard"
   account_replication_type = "LRS"
 }
+resource "azurerm_storage_account" "examplest1"{
+  name = "example-storage1"
+  resource_group_name = azure_resource_group.example1.name
+  location = "eastus"
+  account_tier = "Standard"
+  account_replication_type = "LRS"
+}
 
 backend "azurerm" {
         resource_group_name = "rg-shri"                                   # Can also be set via `ARM_USE_AZUREAD` environment variable.
@@ -35,4 +42,4 @@ backend "azurerm" {
         key                  = "prod.terraform.tfstate"                # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
   }
 }
-wfx-peaf-vxu
+
